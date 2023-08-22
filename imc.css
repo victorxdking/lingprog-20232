@@ -1,16 +1,47 @@
-
+/* Estilização do Contêiner Principal */
 #areaTotal {
-    width: 50%;
-    margin: 30px auto; /* centraliza o elemento na largura - automático à esquerda e direita */  
-    border: 1px solid #000; /* red green blue - RGB */
-    background-color: aqua;
+    width: 80%; /* Largura máxima em tela cheia */
+    max-width: 400px; /* Largura máxima definida */
+    margin: 30px auto;
+    padding: 20px;
+    border: 2px solid #000000;
+    background: #cb53e9;
+    border-radius: 10px;
 }
 
-#areaPeso, #areaAltura, #areaBotao, h1, #areaResposta {
-    padding-left: 30px;
+/* Estilização dos Elementos Internos */
+#areaPeso, #areaAltura, #areaBotao, #areaResposta, h1 {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%; /* Ocupa a largura total do contêiner */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background: #cb53e9;
+    word-wrap: break-word;
 }
 
-#areaPeso, #areaAltura, #areaBotao, #areaResposta {
-    /* border: 1px solid #000; /* red green blue - RGB */
-    margin-bottom: 40px;
+/* Estilização do Botão */
+#areaBotao button {
+    background-color: #a600d9;
+    color: #000;
+    border: 1px solid #000;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#areaBotao button:hover {
+    background-color: #8000b3;
+}
+
+/* Estilização do Resultado */
+#imc {
+    font-size: 18px;
+    font-weight: bold;
+    color: #000;
 }

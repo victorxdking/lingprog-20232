@@ -9,7 +9,7 @@ function calcular(){
     let imc = peso / (altura ** 2)
     // mostrar a resposta
     // template string
-    alert(`O seu IMC é de ${imc.toFixed(2)}`)
+    //alert(`O seu IMC é de ${imc.toFixed(2)}`)
     // devolve o imc para o html
     document.getElementById("imc").innerHTML = 
     `O seu IMC é de ${imc.toFixed(2)}`
