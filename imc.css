@@ -1,10 +1,14 @@
+body{
+    background-color: #000;
+}
+
 /* Estilização do Contêiner Principal */
 #areaTotal {
     width: 80%; /* Largura máxima em tela cheia */
     max-width: 400px; /* Largura máxima definida */
     margin: 30px auto;
     padding: 20px;
-    border: 2px solid #000000;
+    border: 2px solid #ffffff;
     background: #cb53e9;
     border-radius: 10px;
 }
