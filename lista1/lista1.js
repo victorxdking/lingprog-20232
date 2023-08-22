@@ -114,7 +114,39 @@ function exe10(){
     document.getElementById("area").innerHTML = 
     `A área do quadrado é ${area.toFixed(2)}` 
 }
+function exe11() {
+    // recupera os dados do html
+    let diagonalMaior = document.getElementById("diagonalMaior").value
+    let diagonalMenor = document.getElementById("diagonalMenor").value
+    // calculo da área
+    let area = (diagonalMaior * diagonalMenor) / 2
+    // envia o resultado para o html
+    document.getElementById("area").innerHTML = 
+    `A área do losango é ${area.toFixed(2)}`
+}
+function exe12() {
+    // recupera os dados do html
+    let salarioMinimo = document.getElementById("salarioMinimo").value
+    let salarioFuncionario = document.getElementById("salarioFuncionario").value
+    // calcula quantos salários mínimos
+    let resultado = salarioFuncionario / salarioMinimo
+    // envia o resultado para o html
+    document.getElementById("resultado").innerHTML = 
+    `A quantidade de salários mínimos é de ${resultado.toFixed(2)}`
+}
+function exe13() {
+    let tabuada = parseInt(document.getElementById("tabuada").value)
+    let resultadoDiv = document.getElementById("resultado")
+    
+    resultadoDiv.innerHTML = "" // Limpa o conteúdo anterior
 
+    for (let i = 0; i <= 10; i++) {
+        resultadoDiv.innerHTML += `${tabuada} x ${i} = ${tabuada * i}<br>`
+    }
+}
+function exe14() {
+    
+}
 function exe20(){
     // cosseno(angulo) = cateto adjacente / hipotenusa
     // hipotenusa = cateto adjacente / cosseno(angulo)

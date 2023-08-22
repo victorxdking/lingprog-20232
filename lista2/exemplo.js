@@ -1,4 +1,5 @@
 function exemplo() {
+    // recupera os dados do html
     let escolha = Number(document.getElementById("opcao").value);
     let nro1 = Number(document.getElementById("nro1").value);
     let nro2 = Number(document.getElementById("nro2").value); // Corrigido de nro1
@@ -26,6 +27,8 @@ function exemplo() {
     }
 
     if (resultado !== null) {
-        alert(resultado);
+        //alert(resultado);
+        document.getElementById("resultado").innerHTML = 
+        `RESULTADO = ${resultado}`
     }
 }

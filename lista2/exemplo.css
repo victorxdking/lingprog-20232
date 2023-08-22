@@ -40,8 +40,9 @@ body {
 }
 
 /* Estilização do Resultado */
-#imc {
-    font-size: 18px;
+p {
+    text-align: center;
+    size: 18px;
     font-weight: bold;
     color: #000;
 }

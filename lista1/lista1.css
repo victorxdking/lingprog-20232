@@ -3,15 +3,17 @@
     margin: 30px auto;
     border: 1px solid #000;
     background-color: aqua;
+    padding: 10px;
 }
 h1 {
     text-align: center;
 }
 
-h2 {
+h2, p {
     font-size: 15px;
     font-style: italic;
-    text-align: center; 
+    font-weight: bolder;
+    text-align: left; 
 }
 #form {
     border: 1px solid #000;
@@ -21,9 +23,7 @@ h2 {
 div {
     margin-bottom: 10px;
 }
-
-
-
+    
 ul {
     list-style: none;
 }
