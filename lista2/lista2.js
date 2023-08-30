@@ -1,3 +1,85 @@
+function exe1() {
+    // recupera os dados do html
+    let nota1 = Number(document.getElementById("nota1").value)
+    let nota2 = Number(document.getElementById("nota2").value)
+    let nota3 = Number(document.getElementById("nota3").value)
+    let nota4 = Number(document.getElementById("nota4").value)
+    // calculo da média
+    let media = (nota1 + nota2 + nota3 + nota4) / 4
+    // verifica status do aluno
+    let status
+    if(media >= 7){
+        status = "Aprovado"
+    }
+    else{
+        status = "Reprovado"
+    }
+    // envia o resultado para o html
+    document.getElementById("resultado").innerHTML = 
+    `Média do aluno: ${media.toFixed(2)} - ${status}` 
+
+}
+function exe2() {
+    // recupera os dados do html
+    let nota1 = Number(document.getElementById("nota1").value)
+    let nota2 = Number(document.getElementById("nota2").value)
+    // calculo da média
+    let media = (nota1 + nota2) / 2
+    let status
+    if (media >= 0 && media < 3) {
+        status = "Reprovado"
+    }
+    else if (media >= 3 &&  media < 7) {
+        status = "Exame"
+    }
+    else if (media >= 7 && media <= 10) {
+        status = "Aprovado"        
+    }
+    else{
+        status = "Dados inválidos"
+    }
+    // envia o resultado para o html
+    document.getElementById("resultado").innerHTML = 
+    `Média do aluno: ${media.toFixed(2)} - ${status}`
+}
+function exe3() {
+    // recupera os dados do html
+    let nro1 = Number(document.getElementById("nro1").value)
+    let nro2 = Number(document.getElementById("nro2").value)
+    // calcula o menor número
+    if (nro1 < nro2){   
+        document.getElementById("resultado").innerHTML = 
+        `O menor número é ${nro1}`   
+    }
+    else if (nro1 > nro2) {
+        document.getElementById("resultado").innerHTML = 
+        `O menor número é ${nro2}`
+    }
+    else{
+        document.getElementById("resultado").innerHTML = 
+        `Os números são iguais`
+    }
+}
+function exe4() {
+    // recupera os dados do html
+    let nro1 = Number(document.getElementById("nro1").value)
+    let nro2 = Number(document.getElementById("nro2").value)
+    let nro3 = Number(document.getElementById("nro3").value)
+    // calculo do maior número
+    let maiorNumero
+    if (nro1 >= nro2 && nro1 >= nro3) {
+        maiorNumero = nro1
+    }
+    else if (nro2 >= nro1 && nro2 >= nro3) {
+        maiorNumero = nro2
+    }
+    else if (nro3 >= nro1 && nro3 >= nro2) {
+        maiorNumero = nro3
+    }
+    // exibe o resultado
+    document.getElementById("resultado").innerHTML = 
+    `O maior número é ${maiorNumero}`
+}
 function exe5() {
     // recupera os dados do html
     let escolha = Number(document.getElementById("opcao").value);
