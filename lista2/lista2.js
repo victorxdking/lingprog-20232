@@ -114,6 +114,27 @@ function exe5() {
         `RESULTADO = ${resultado}`
     }
 }
+function exe6() {
+    let escolha = document.getElementById("opcao").value
+    let nro1 = Number(document.getElementById("nro1").value)
+    let nro2 = Number(document.getElementById("nro2").value)
+    let resultado = null
+    
+    switch (escolha) {
+        case a:
+            resultado1 = nro1 ^ nro2
+            break
+        case b:
+            resultado1
+            
+            = nro1 ^ 2
+
+        case c:
+            resultado1
+        default:
+            break;
+    }
+}
 function exe22() {
     let idade = Number(document.getElementById("idade").value)
     let peso = Number(document.getElementById("peso").value)
