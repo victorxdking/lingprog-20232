@@ -121,20 +121,22 @@ function exe6() {
     let resultado = null
     
     switch (escolha) {
-        case a:
-            resultado1 = nro1 ^ nro2
-            break
-        case b:
-            resultado1
-            
-            = nro1 ^ 2
-
-        case c:
-            resultado1
-        default:
+        case 'a':
+            resultado = Math.pow(nro1, nro2);
             break;
+        case 'b':
+            resultado = Math.sqrt(nro1) + '  ' + Math.sqrt(nro2);
+            break;
+        case 'c':
+            resultado = Math.cbrt(nro1) + '  ' + Math.cbrt(nro2);
+            break;
+        default:
+            document.getElementById("resultado").innerHTML = 'Operação inválida';
+            return; // Adicione um retorno aqui para sair da função em caso de operação inválida
     }
-}
+    
+    document.getElementById("resultado").innerHTML = `RESULTADO = ${resultado}`;
+}    
 function exe22() {
     let idade = Number(document.getElementById("idade").value)
     let peso = Number(document.getElementById("peso").value)
