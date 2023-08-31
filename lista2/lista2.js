@@ -136,7 +136,47 @@ function exe6() {
     }
     
     document.getElementById("resultado").innerHTML = `RESULTADO = ${resultado}`;
-}    
+} 
+function exe7() {
+    // recupera os dados do html
+    let salario = Number(document.getElementById("salario").value)
+    // calculo do aumento
+    if (salario < 500) {
+        salario += salario * 0.30
+        document.getElementById("resultado").innerHTML = 
+        `O novo salário é R$ ${salario.toFixed(2)}`
+    }
+    else {
+        document.getElementById("resultado").innerHTML = 
+        "Você não tem direito ao aumento"
+    }
+}
+function exe8() {
+    let salario = Number(document.getElementById("salario").value)
+    // calcula do aumento
+    if (salario >= 0 && salario <= 300) {
+        salario += salario * 0.35
+    }
+    else if (salario > 300){
+        salario += salario * 0.15
+    }
+    else{
+        document.getElementById("resultado").innerHTML = 
+        "Você digitou algo errado" // caso digite valores negativos
+    }
+    if (salario > 0) {
+        document.getElementById("resultado").innerHTML = 
+        `O novo salário é R$ ${salario.toFixed(2)}`  
+    }  
+}   
+function exe9() {
+    let saldo = Number(document.getElementById("saldo").value)
+    let credito = null
+    // calculo credito
+    if (saldo > 400) {
+        
+    }
+}
 function exe22() {
     let idade = Number(document.getElementById("idade").value)
     let peso = Number(document.getElementById("peso").value)

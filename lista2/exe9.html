@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 9 - Lista 2</title>
+    <link rel="stylesheet" href="lista2.css">
+    <script src="lista2.js"></script>
+</head>
+<body>
+    <div id="container">
+        <h1>Exercício 9</h1>
+        <h2>Um banco concederá um crédito especial aos seus clientes, de acordo com o saldo médio no último ano. Faça um programa que receba o saldo médio de um cliente e calcule o valor do crédito, de acordo com a tabela a seguir. Mostre o saldo médio e o valor do crédito.</h2>
+        <div id="tabela">
+            <table>
+                <tr>
+                    <th>SALDO MÉDIO</th>
+                    <th>PERCENTUAL</th>
+                </tr>
+                <tr>
+                    <td>Acima de R$ 400,00</td>
+                    <td>30% do saldo médio</td>
+                </tr>
+                <tr>
+                    <td>R$ 400,00 até R$ 300,00</td>
+                    <td>25% do saldo médio</td>
+                </tr>
+                <tr>
+                    <td>R$ 300,00 até R$ 200,00</td>
+                    <td>20% do saldo médio</td>
+                </tr>
+                <tr>
+                    <td>Até R$ 200,00</td>
+                    <td>10% do saldo médio</td>
+                </tr>
+            </table>
+        </div>
+        <div id="form">
+            <div>
+                <label for="saldo">Saldo médio</label>
+                <input type="number" id="saldo">
+            </div>
+            <div>
+                <button onclick="exe9()">Calcular</button>
+            </div>
+            <div>
+                <p id="resultado"> </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
