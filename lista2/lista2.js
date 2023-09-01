@@ -173,9 +173,45 @@ function exe9() {
     let saldo = Number(document.getElementById("saldo").value)
     let credito = null
     // calculo credito
-    if (saldo > 400) {
-        
+    if (saldo > 0 && saldo <= 200) {
+        credito = saldo * 0.10
     }
+    else if (saldo > 200 && saldo <= 300) {
+        credito = saldo * 0.20
+    }
+    else if (saldo > 300 && saldo <= 400) {
+        credito = saldo * 0.25
+    }
+    else if (saldo > 400) {
+        credito = saldo * 0.30
+    }
+    // mostra o resultado no html
+    if (saldo > 0) {
+        document.getElementById("resultado").innerHTML = 
+        `Saldo Médio = R$ ${saldo.toFixed(2)} <br> 
+        Crédito liberado = R$ ${credito.toFixed(2)}`
+    }
+}
+function exe10() {
+   let custo = Number(document.getElementById("custo").value)
+   let distribuidor = null
+   let imposto = null
+   // calculo do preço do carro para o consumidor
+   if (custo > 0 && custo <= 12000) {
+        distribuidor = custo * 0.05
+        imposto = 0
+    }
+    else if (custo > 12000 && custo <= 25000) {
+    distribuidor = custo * 0.10
+        imposto = custo * 0.15
+    }
+    else if (custo > 25000) {
+        distribuidor = custo * 0.15
+        imposto = custo * 0.20
+    }
+    let precoFinal = custo + distribuidor + imposto
+    document.getElementById("resultado").innerHTML = 
+    `Preço final = R$ ${precoFinal.toFixed(2)}`
 }
 function exe22() {
     let idade = Number(document.getElementById("idade").value)
