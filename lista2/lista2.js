@@ -213,6 +213,181 @@ function exe10() {
     document.getElementById("resultado").innerHTML = 
     `Preço final = R$ ${precoFinal.toFixed(2)}`
 }
+function exe11() {
+    // coleta os dados no html
+    let salarioAtual = Number(document.getElementById("salarioAtual").value)
+    // calcula o valor do aumento
+    if (salarioAtual > 0 && salarioAtual <= 300) {
+        aumento = salarioAtual * 0.15
+    }
+    else if (salarioAtual > 300 && salarioAtual <= 600) {
+        aumento = salarioAtual * 0.10
+    }
+    else if (salarioAtual > 600 && salarioAtual <= 900) {
+        aumento = salarioAtual * 0.05
+    }
+    else if (salarioAtual > 900) {
+        aumento = salarioAtual * 0
+    }
+    else {
+        document.getElementById("resultado").innerHTML = 
+        "Você digitou um valor inválido"
+    }
+    // novo salário
+    let novoSalario = salarioAtual + aumento
+    // envia o resultado para o html
+    document.getElementById("resultado").innerHTML = 
+    `Valor do aumento = R$ ${aumento} <br>
+    Novo Salário = R$ ${novoSalario}`
+}
+function exe15() {
+    // recupera os dados do html
+    let opcao = Number(document.getElementById("opcao").value)
+    let valor = Number(document.getElementById("valor").value)
+    let resultado = null
+    // Calcula o resultado com base na opção escolhida
+    switch (opcao) {
+        case 1:
+            resultado = valor + (valor * 0.03)
+            break;
+        case 2:
+            resultado = valor + (valor *0.04)
+            break
+        default: 
+            alert("Escolha uma opção válida.") // Adiciona uma mensagem de erro
+    }
+    if (resultado !== null) {
+        document.getElementById("resultado").innerHTML = 
+        `Valor corrigido após 1 mês = R$ ${resultado.toFixed(2)}`
+    }
+}
+function exe16() {
+    let codigo = Number(document.getElementById("codigo").value);
+    let precoAtual = Number(document.getElementById("precoAtual").value);
+    let desconto // Inicialize desconto com 0 por padrão
+
+    // Define um valor inicial para o elemento "resultado"
+    document.getElementById("resultado").innerHTML = ""
+
+    if (precoAtual <= 0 || codigo <= 0) {
+        document.getElementById("resultado").innerHTML = "Valor inválido"
+    } else if (precoAtual <= 30) {
+        desconto = 0
+    } else if (precoAtual <= 100) {
+        desconto = precoAtual * 0.10
+    } else {
+        desconto = precoAtual * 0.15
+    }
+
+    // Calcula o novo preço
+    let novoPreco = precoAtual - desconto
+
+    // Exibe o resultado apenas se não for um valor inválido
+    if (document.getElementById("resultado").innerHTML === "") {
+        document.getElementById("resultado").innerHTML =
+            `Código do produto ${codigo} <br> Preço com desconto R$ ${novoPreco.toFixed(2)}`
+    }
+}
+function exe17() {
+    // recupera os daddos do html
+    let senha = Number(document.getElementById("senha").value)
+    // verifica a senha
+    if (senha == 4531) {
+        document.getElementById("resultado").innerHTML = "Acesso liberado..."
+        // abre a página da Fatec em uma nova guia
+        setTimeout(function () {
+            window.open("https://site.fatecfranca.edu.br/", "_blank")
+        }, 2000) // 2 segundos de delay
+    }
+    else if (senha == ""){
+        document.getElementById("resultado").innerHTML = "Digite a senha!"
+    }
+    else {
+        document.getElementById("resultado").innerHTML = "Senha incorreta, acesso negado!"
+    }
+}
+function exe18() {
+    // recupera os dados do html
+    let idade = Number(document.getElementById("idade").value)
+    // calcula maioridade
+    if (idade >= 18) {
+        document.getElementById("resultado").innerHTML = "Você atingiu a maioridade."
+    }
+    else if (idade == ""){
+        document.getElementById("resultado").innerHTML = "Digite a sua idade!"
+    }
+    else {
+        document.getElementById("resultado").innerHTML = "Você não atingiu a maioridade."
+    }
+}
+function exe19() {
+    let escolha = Number(document.getElementById("opcao").value)
+    let altura = Number(document.getElementById("altura").value)
+    let pesoIdeal
+
+    if (altura > 0) {
+        switch (escolha) {
+            case 1:
+                pesoIdeal = (72.7 * altura) - 58 
+                break
+            case 2:
+                pesoIdeal = (62.1 * altura) - 44.7 
+                break
+            default: document.getElementById("resultado").innerHTML =
+                    'Escolha uma opção válida (1 ou 2)'
+                    return // Encerrar a função aqui para evitar a exibição do pesoIdeal indefinido
+        }
+        document.getElementById("resultado").innerHTML = 
+        `Seu peso ideal é ${pesoIdeal.toFixed(2)} kg`
+    }
+    else {
+        document.getElementById("resultado").innerHTML = 
+        'Digite uma altura válida'
+    }
+}
+function exe20() {
+    let idade = Number(document.getElementById("idade").value);
+    let categoria = "";
+
+    if (idade < 5) {
+        categoria = "Idade inferior a 5 anos";
+    } else if (idade >= 5 && idade <= 7) {
+        categoria = "Infantil";
+    } else if (idade >= 8 && idade <= 10) {
+        categoria = "Juvenil";
+    } else if (idade >= 11 && idade <= 15) {
+        categoria = "Adolescente";
+    } else if (idade >= 16 && idade <= 30) {
+        categoria = "Adulto";
+    } else {
+        categoria = "Senior";
+    }
+
+    document.getElementById("resultado").innerHTML = `Categoria: ${categoria}`;
+}
+function exe21() {
+    let preco = Number(document.getElementById("preco").value);
+    let codigoOrigem = Number(document.getElementById("codigoOrigem").value);
+    let procedencia = ""
+
+    if (codigoOrigem === 1 || codigoOrigem === 2) {
+        procedencia = "Sul"
+    } else if (codigoOrigem === 3 || codigoOrigem === 4) {
+        procedencia = "Leste"
+    } else if (codigoOrigem === 5 || codigoOrigem === 6) {
+        procedencia = "Oeste"
+    } else if (codigoOrigem >= 7 && codigoOrigem <= 9) {
+        procedencia = "Centro-oeste"
+    } else if (codigoOrigem >= 10 && codigoOrigem <= 20) {
+        procedencia = "Nordeste"
+    } else if (codigoOrigem >= 21 && codigoOrigem <= 30) {
+        procedencia = "Sudeste"
+    } else {
+        procedencia = "Código de Origem Inválido"
+    }
+
+    document.getElementById("resultado").innerHTML = `Procedência: ${procedencia}`
+}
 function exe22() {
     let idade = Number(document.getElementById("idade").value)
     let peso = Number(document.getElementById("peso").value)
@@ -374,4 +549,25 @@ function exe24() {
         document.getElementById("resultado").innerHTML = `Aumento ${aumento} Desconto 
         ${desconto} Novo Preço ${novoPreco} e Classificação ${classificacao}`
     }
+}
+function exe25() {
+    let horasExtras = Number(document.getElementById("horasExtras").value)
+    let horasFalta = Number(document.getElementById("horasFalta").value)
+    let premio = 0
+
+    let horasEmMinutos = horasExtras - (2 / 3 * horasFalta);
+
+    if (horasEmMinutos > 2400) {
+        premio = 500.00
+    } else if (horasEmMinutos >= 1800 && horasEmMinutos <= 2400) {
+        premio = 400.00
+    } else if (horasEmMinutos >= 1200 && horasEmMinutos < 1800) {
+        premio = 300.00
+    } else if (horasEmMinutos >= 600 && horasEmMinutos < 1200) {
+        premio = 200.00
+    } else if (horasEmMinutos < 600) {
+        premio = 100.00
+    }
+
+    document.getElementById("resultado").innerHTML = `Prêmio de Natal: R$ ${premio.toFixed(2)}`
 }
