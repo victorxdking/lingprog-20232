@@ -28,3 +28,32 @@ function exe1() {
     contador2++
     }
 }
+function exe2() {
+    let precoIngresso = 5.0
+    let quantidadeIngressos = 120
+    const despesa = 200.0
+    let lucroMaximo = 0.0
+    let precoLucroMaximo = 0.0
+    let quantidadeLucroMaximo = 0
+
+    console.log("Preço do Ingresso | Quantidade de Ingressos | Lucro")
+
+    while (precoIngresso >= 1.0) {
+        const lucro = (precoIngresso * quantidadeIngressos) - despesa
+
+        console.log(`${precoIngresso.toFixed(2)} | ${quantidadeIngressos} | R$${lucro.toFixed(2)}`)
+
+        if (lucro > lucroMaximo) {
+            lucroMaximo = lucro
+            precoLucroMaximo = precoIngresso
+            quantidadeLucroMaximo = quantidadeIngressos
+        }
+
+        precoIngresso -= 0.5
+        quantidadeIngressos += 26
+    }
+
+    console.log(`\nLucro máximo esperado: R$${lucroMaximo.toFixed(2)}`)
+    console.log(`Preço do ingresso para lucro máximo: R$${precoLucroMaximo.toFixed(2)}`)
+    console.log(`Quantidade de ingressos vendidos para lucro máximo: ${quantidadeLucroMaximo}`)
+}
