@@ -52,6 +52,46 @@ function exe2() {
     document.getElementById('melhorQtde').innerHTML = `Melhor Quantidade = ${melhorQtde}`
     document.getElementById('melhorPreco').innerHTML = `Melhor Preço = R$ ${melhorPreco.toFixed(2)}`
 }
+function exe3() {
+    let faixa1 = 0
+    let faixa2 = 0
+    let faixa3 = 0
+    let faixa4 = 0
+    let faixa5 = 0
+
+    for(let i = 0; i < 8; i++) {
+    const idade = parseInt(prompt(`Idade da pessoa ${i + 1}:`))
+
+        if (idade <= 15) {
+            faixa1++
+        }
+        else if (idade >= 16 && idade <= 30) {
+            faixa2++
+        }
+        else if (idade >= 31 && idade <= 45) {
+            faixa3++
+        }
+        else if (idade >= 46 && idade <= 60) {
+            faixa4++
+        }
+        else {
+            faixa5++
+        }
+    }
+    console.log("\nIdades:")
+    console.log(`Até 15 anos: ${faixa1} pessoas`)
+    console.log(`De 16 a 30 anos: ${faixa2} pessoas`)
+    console.log(`De 31 a 45 anos: ${faixa3} pessoas`)
+    console.log(`De 46 a 60 anos: ${faixa4} pessoas`)
+    console.log(`Acima de 60 anos: ${faixa5} pessoas`)
+
+    const porcentagemMenores15 = (faixa1 / 8) * 100
+    const porcentagemMaiores60 = (faixa5 / 8) * 100
+
+    console.log(`\nPorcentagem de menores de 15 anos: ${porcentagemMenores15.toFixed(2)}%`)
+    console.log(`\nPorcentagem de maiores de 60 anos: ${porcentagemMaiores60.toFixed(2)}%\n`)
+}
+
 function exe5(){
     let corpo = ''
     for(let numero = 1; numero <= 10; numero++){
@@ -72,4 +112,5 @@ function exe5(){
     }
     document.getElementById('corpo').innerHTML = corpo
 }
+
   
