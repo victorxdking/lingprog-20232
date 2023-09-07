@@ -186,7 +186,7 @@ function exe7() {
     let contOlhoAzul = 0
     let pessoaCabeloReOlhoA = 0
 
-    for(i = 0; i < 2; i++) {
+    for(let i = 0; i < 6; i++) {
         idade = parseInt(prompt('Digite a idade'))
         peso = Number(prompt('Digite o peso'))
         altura = Number(prompt('Digite a altura'))
@@ -208,7 +208,7 @@ function exe7() {
             contOlhoAzul++
         }
         // a quantidade de pessoas ruivas e que não possuem olhos azuis
-        if (corCabelo = 'R') {
+        if (corCabelo == 'R') {
             if (corOlho != 'A') {
                 pessoaCabeloReOlhoA++
             }
@@ -216,11 +216,134 @@ function exe7() {
     }
 
     let mediaIdade = idadeTotal / contIdade
-    let porcentagemOlhoAzul = contOlhoAzul / 2
+    let porcentagemOlhoAzul = (contOlhoAzul / 6) * 100
 
     document.getElementById('resultado').innerHTML =
     `Quantidade de pessoas com idade superior a 50 anos e peso inferior a 60 kg = ${pessoa50anos60peso} <br>
     A média das idades das pessoas com altura inferior a 1.50m = ${mediaIdade.toFixed(2)} <br> 
-    A porcentagem de pessoas com olhos azuis entre todas as pessoas analisadas = `
+    A porcentagem de pessoas com olhos azuis entre todas as pessoas analisadas = ${porcentagemOlhoAzul.toFixed(2)} <br>
+    A quantidade de pessoas ruivas e que não possuem olhos azuis = ${pessoaCabeloReOlhoA}`
  }
+ function exe9() {
+    let idade
+    let peso
+    let altura
+
+    let totalIdade = 0
+    let contIdade = 0
+    let peso90Altura150 = 0
+    let contAltura190 = 0
+    let cont10a30 = 0
+
+
+    for(let i = 0; i < 10; i++){
+        idade = parseInt(prompt('Digite a idade'))
+        peso = Number(prompt('Digite o peso'))
+        altura = Number(prompt('Digite a altura'))
+        // calcula a media da idade das pessoas
+        totalIdade += idade
+
+        // quantidade de pessoas com peso superior a 90kg e altura inferior a 1.50
+        if (peso > 90 && altura < 1.50) {
+            peso90Altura150++
+        }
+        // a porcentagem de pessoas com idade entre 10 e 30 anos entre as pessoas que medem mais de 1.90
+        if (altura > 1.90) {
+            contAltura190++
+            if (idade >= 10 && idade <= 30) {
+                cont10a30++
+            }
+        }
+    }
+    let porcentagem10a30 = (cont10a30 / contAltura190) * 100
+    let mediaIdade = totalIdade / 10
+
+    document.getElementById('resultado').innerHTML = 
+    `A medida das idades das 10 pessoas é ${mediaIdade.toFixed(2)} <br>
+    Quantidade de pessoas com peso superior a 90 kg e altura inferior a 1.50 m é ${peso90Altura150} <br>
+    Porcentagem de pessoas com idade entre 10 e 30 anos entre as pessoas que medem mais de 1.90 m é ${porcentagem10a30.toFixed(2)}%`
+}
+function exe10() {
+    let smPar = 0
+    let smPrimos = 0
+    let numerosPares = ''; // String para armazenar números pares
+    let numerosPrimos = ''; // String para armazenar números primos
+
+    for (let i = 0; i < 10; i++) {
+        let numero = parseInt(prompt('Digite um número'))
+
+        // Verifica se o número é par e adiciona à soma de pares
+        if (!isNaN(numero) && numero % 2 === 0) {
+            smPar += numero;
+            numerosPares += numero + ' '; // Adiciona o número par à string
+        }
+
+        // Verifica se o número é primo e adiciona à soma de primos
+        if (!isNaN(numero) && isPrimo(numero)) {
+            smPrimos += numero;
+            numerosPrimos += numero + ' '; // Adiciona o número primo à string
+        }
+    }
+
+    document.getElementById('resultado').innerHTML =
+        `Números pares: ${numerosPares} <br>
+         A soma dos números pares é ${smPar} <br>
+         Números primos: ${numerosPrimos} <br>
+         A soma dos números primos é ${smPrimos}`
+}
+// Função para verificar se um número é primo
+function isPrimo(numero) {
+    if (numero <= 1) {
+        return false;
+    }
+    if (numero <= 3) {
+        return true;
+    }
+    if (numero % 2 === 0 || numero % 3 === 0) {
+        return false;
+    }
+    for (let i = 5; i * i <= numero; i += 6) {
+        if (numero % i === 0 || numero % (i + 2) === 0) {
+            return false;
+        }
+    }
+    return true;
+}
+function exe11() {
+    // Coleta o valor do carro do usuário
+    let valorCarro = parseFloat(prompt("Digite o valor do carro:"));
+
+    if (isNaN(valorCarro) || valorCarro <= 0) {
+        alert("Por favor, digite um valor válido para o carro.");
+        return;
+    }
+
+    // Calcula o preço final com desconto de 20%
+    let precoFinalAVista = valorCarro * 0.8;
+
+    // Cria uma tabela HTML para mostrar os resultados
+    let tabela = "<table border='1'>";
+    tabela += "<tr><th>Quantidade de Parcelas</th><th>Percentual de Acréscimo</th><th>Valor da Parcela</th></tr>";
+
+    // Define as opções de parcelas e seus percentuais de acréscimo
+    let parcelas = [6, 12, 18, 24, 30, 36, 42, 48, 54, 60];
+    let acrescimos = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30]; // Adicionando 30% para 60x
+
+    // Calcula e adiciona cada linha da tabela
+    for (let i = 0; i < parcelas.length; i++) {
+        let quantidadeParcelas = parcelas[i];
+        let percentualAcrescimo = acrescimos[i];
+        let valorParcela = (precoFinalAVista * (1 + percentualAcrescimo / 100)) / quantidadeParcelas;
+
+        tabela += `<tr><td>${quantidadeParcelas}</td><td>${percentualAcrescimo}%</td><td>R$ ${valorParcela.toFixed(2)}</td></tr>`;
+    }
+
+    tabela += "</table>";
+
+    // Exibe a tabela no HTML
+    document.getElementById("resultado").innerHTML = tabela;
+}
+
+
+
  

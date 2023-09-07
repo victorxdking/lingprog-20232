@@ -41,9 +41,9 @@ th {
 }
 
 #form {
-    /*border: 1px solid #ffffff
+    border: 1px solid #000000;
     padding: 20px; /* espaçamento interno */
-    /*margin: 20px; /* espaçamento externo */
+    margin: 20px; /* espaçamento externo */
 }
 
 div {
