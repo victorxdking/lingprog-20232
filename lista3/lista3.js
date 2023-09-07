@@ -180,12 +180,44 @@ function exe7() {
     let corOlho
     let corCabelo
 
+    let pessoa50anos60peso = 0
+    let contIdade = 0
+    let idadeTotal = 0
+    let contOlhoAzul = 0
+    let pessoaCabeloReOlhoA = 0
+
     for(i = 0; i < 2; i++) {
         idade = parseInt(prompt('Digite a idade'))
         peso = Number(prompt('Digite o peso'))
         altura = Number(prompt('Digite a altura'))
-        corOlho = prompt('A = azul P = preto\nV = verde C = castanho')
-        corCabelo = prompt('')
+        corOlho = prompt('A = azul\nP = preto\nV = verde\nC = castanho')
+        corCabelo = prompt('P = preto\nC = castanho\nL = louro\nR = ruivo')
+        // a quantidade de pessoas com idade superior a 50 anos e peso inferior a 60 kg
+        if (idade > 50) {
+            if (peso < 60) {
+                pessoa50anos60peso++
+            }
+        }
+        // a média das idades das pessoas com altura inferior a 1.50 m
+        if (altura < 1.50) {
+            contIdade++
+            idadeTotal += idade
+        }
+        // a porcentagem de pessoas com olhos azuis entre todas as pessoas analisadas
+        if (corOlho == 'A') {
+            contOlhoAzul++
+        }
+        // a quantidade de pessoas ruivas e que não possuem olhos azuis
+        if (corCabelo = 'R') {
+            if (corOlho != 'A') {
+                pessoaCabeloReOlhoA++
+            }
+        }
     }
+
+
+
+    document.getElementById('resultado').innerHTML =
+    `Quantidade de pessoas com idade superior a 50 anos e peso inferior a 60 kg = ${pessoa50anos60peso}`
  }
  
