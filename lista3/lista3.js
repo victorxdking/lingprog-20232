@@ -215,9 +215,12 @@ function exe7() {
         }
     }
 
-
+    let mediaIdade = idadeTotal / contIdade
+    let porcentagemOlhoAzul = contOlhoAzul / 2
 
     document.getElementById('resultado').innerHTML =
-    `Quantidade de pessoas com idade superior a 50 anos e peso inferior a 60 kg = ${pessoa50anos60peso}`
+    `Quantidade de pessoas com idade superior a 50 anos e peso inferior a 60 kg = ${pessoa50anos60peso} <br>
+    A média das idades das pessoas com altura inferior a 1.50m = ${mediaIdade.toFixed(2)} <br> 
+    A porcentagem de pessoas com olhos azuis entre todas as pessoas analisadas = `
  }
  
