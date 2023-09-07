@@ -78,21 +78,23 @@ function exe3() {
             faixa5++
         }
     }
-    console.log("\nIdades:")
-    console.log(`Até 15 anos: ${faixa1} pessoas`)
-    console.log(`De 16 a 30 anos: ${faixa2} pessoas`)
-    console.log(`De 31 a 45 anos: ${faixa3} pessoas`)
-    console.log(`De 46 a 60 anos: ${faixa4} pessoas`)
-    console.log(`Acima de 60 anos: ${faixa5} pessoas`)
-
-    const porcentagemMenores15 = (faixa1 / 8) * 100
-    const porcentagemMaiores60 = (faixa5 / 8) * 100
-
-    console.log(`\nPorcentagem de menores de 15 anos: ${porcentagemMenores15.toFixed(2)}%`)
-    console.log(`\nPorcentagem de maiores de 60 anos: ${porcentagemMaiores60.toFixed(2)}%\n`)
+    document.getElementById('resultado').innerHTML = `
+    Até 15 anos: ${faixa1} pessoas<br>
+    De 16 a 30 anos: ${faixa2} pessoas<br>
+    De 31 a 45 anos: ${faixa3} pessoas<br>
+    De 46 a 60 anos: ${faixa4} pessoas<br>
+    Acima de 60 anos: ${faixa5} pessoas<br>
+    ${(faixa1 / 8) * 100}% das pessoas estão na 1ª faixa etária<br>
+    ${(faixa5 / 8) * 100}% das pessoas estão na 5ª faixa etária`
 }
-
-function exe5(){
+function exe4() {
+    let tabuada = Number(prompt('Informe o nº da tabuada'))
+    for(i = 0; i < 11; i++){
+        document.getElementById('resultado').innerHTML += `
+        ${tabuada} x ${i} = ${tabuada * i}<br>`
+    }
+}
+function exe5() {
     let corpo = ''
     for(let numero = 1; numero <= 10; numero++){
         corpo = corpo + `
@@ -112,5 +114,78 @@ function exe5(){
     }
     document.getElementById('corpo').innerHTML = corpo
 }
+function exe6() {
+    let transacao
+    let formaPagamento
+    let totalAvista = 0
+    let totalAprazo = 0
+    
+    for(i = 0; i < 15; i++){
+    transacao = Number(prompt('Valor da transação R$'))
+    formaPagamento = prompt('A = à vista\nP = à prazo')
+        if(formaPagamento == "A"){
+            totalAvista += transacao
+        }
+        else if(formaPagamento == "P"){
+            totalAprazo += transacao
+        }
+        else{
+            alert('Valor inválido')
+            i--
+        }
+    }
+    document.getElementById('resultado').innerHTML =
+    `Total de transações à vista R$ ${totalAvista} <br>
+     Total de transações à prazo R$ ${totalAprazo} <br>
+     Total de transações efetuadas R$ ${totalAvista + totalAprazo}`
+}
+function exe7() {
+    let idadeMaior50 = 0
+    let contAltura = 0
+    let contPeso = 0
+    let alturaTotal = 0 
 
-  
+    let idade 
+    let altura
+    let peso
+ 
+    for(i = 0; i < 5; i++){
+     idade = parseInt(prompt('Digite a idade'))
+     altura = Number(prompt('Digite a altura'))
+     peso = Number(prompt('Digite o peso'))
+     
+     if (idade > 50) {
+         idadeMaior50++
+     }
+     if (idade >= 10 && idade <= 20) {
+         contAltura++
+         alturaTotal += altura
+     }
+     if (peso < 40) {
+         contPeso++
+     }
+ }
+     let mediaAltura = alturaTotal / contAltura
+     let porcentagemPeso = (contPeso / 5) * 100
+ 
+     document.getElementById('resultado').innerHTML =
+     `Quantidade de pessoas com idade maior que 50 anos = ${idadeMaior50} <br>
+     A média das alturas das pessoas com idade entre 10 e 20 anos = ${mediaAltura.toFixed(2)} <br>
+     Porcentagem de pessoas com peso inferior a 40kg entre todas as pessoas analisadas = ${porcentagemPeso.toFixed(2)}%`
+ }
+ function exe8() {
+    let idade
+    let peso
+    let altura
+    let corOlho
+    let corCabelo
+
+    for(i = 0; i < 2; i++) {
+        idade = parseInt(prompt('Digite a idade'))
+        peso = Number(prompt('Digite o peso'))
+        altura = Number(prompt('Digite a altura'))
+        corOlho = prompt('A = azul P = preto\nV = verde C = castanho')
+        corCabelo = prompt('')
+    }
+ }
+ 
