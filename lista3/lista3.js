@@ -60,9 +60,13 @@ function exe3() {
     let faixa5 = 0
 
     for(let i = 0; i < 8; i++) {
-    const idade = parseInt(prompt(`Idade da pessoa ${i + 1}:`))
+    const idade = parseInt(prompt(`Idade da ${i + 1}ª pessoa:`))
 
-        if (idade <= 15) {
+        if (idade <= 0) {
+            alert('Idade inválida')
+            i--
+        }
+        else if (idade <= 15) {
             faixa1++
         }
         else if (idade >= 16 && idade <= 30) {
@@ -157,7 +161,7 @@ function exe7() {
      if (idade > 50) {
          idadeMaior50++
      }
-     if (idade >= 10 && idade <= 20) {
+     else if (idade >= 10 && idade <= 20) {
          contAltura++
          alturaTotal += altura
      }
@@ -190,9 +194,16 @@ function exe7() {
         idade = parseInt(prompt('Digite a idade'))
         peso = Number(prompt('Digite o peso'))
         altura = Number(prompt('Digite a altura'))
-        corOlho = prompt('A = azul\nP = preto\nV = verde\nC = castanho')
-        corCabelo = prompt('P = preto\nC = castanho\nL = louro\nR = ruivo')
+        
         // a quantidade de pessoas com idade superior a 50 anos e peso inferior a 60 kg
+        do {
+            olhos = prompt('A = azul\nP = preto\nV = verde\nC = castanho').toUpperCase
+        }
+        while (olhos != 'A' && olhos != 'P' && olhos != 'V' && olhos != 'C')
+        do {
+            cabelos = prompt('P = preto\nC = castanho\nL = louro\nR = ruivo').toUpperCase
+        }
+        while (cabelos != 'P' && cabelos != 'C' && cabelos != 'L' && cabelos != 'R')
         if (idade > 50) {
             if (peso < 60) {
                 pessoa50anos60peso++
