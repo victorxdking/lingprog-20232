@@ -354,6 +354,87 @@ function exe11() {
     // Exibe a tabela no HTML
     document.getElementById("resultado").innerHTML = tabela;
 }
+function calcularMediaEMaiorNota() {
+    let vetor = []
+
+    // for para entrada de dados
+    for (let i = 0; i < 5; i++) {
+        vetor.push(Number(prompt(`Informe nota ${i+1}`)))
+    }
+
+    // for para cálculo da média
+    let soma = 0
+    for (let i = 0; i < 5; i++) {
+        soma += vetor[i]
+    }
+
+    // for para encontrar a maior nota
+    let maior = vetor[0] // maior nota é a primeira
+    for (let i = 1; i < 5; i++) {
+        if (vetor[i] > maior) {
+            maior = vetor[i]
+        }
+    }
+
+    alert(`A média é ${soma / vetor.length}`)
+    alert(`A maior nota é ${maior}`)
+}
+function calcularMaiorMenorNota() {
+    let notas = []
+    let nomes = []
+
+    // for para entrada de dados
+    for (let i = 0; i < 5; i++) {
+        notas.push(Number(prompt(`Informe a ${i+1}ª nota `)))
+        notas.push(Number(prompt(`Informe o ${i+1}º nome`)))
+    }
+
+    // for para encontrar a maior nota
+    let maior = notas[0] // maior nota é a primeira
+    for (let i = 1; i < 5; i++) {
+        if (notas[i] > maior) {
+            maior = notas[i]
+        }
+    }
+    alert(`A maior nota é ${maior}`)
+}
+function calcularMaiorMenorNota() {
+    let notas = []
+    let nomes = []
+
+    // for para entrada de dados
+    for (let i = 0; i < 3; i++) {
+        notas.push(Number(prompt(`Informe a ${i+1}ª nota `)))
+        nomes.push(prompt(`Informe o ${i+1}º nome`))
+    }
+
+    // for para encontrar a maior nota
+    let maior = notas[0] // maior nota é a primeira
+    let maiorNome = nomes[0]
+    for (let i = 1; i < notas.length; i++) {
+        if (notas[i] > maior) {
+            maior = notas[i]
+            maiorNome = nomes[i]
+        }
+    }
+
+    // for para encontrar a menor nota
+    let menor = notas[0] // menor nota é a primeira
+    let menorNome = nomes[notas.indexOf(menor)]
+    for (let i = 1; i < notas.length; i++) {
+        if (notas[i] < menor) {
+            menor = notas[i]
+            menorNome = nomes[i]
+        }
+    }
+
+    // Imprime a maior e a menor nota e o nome de quem tirou
+    alert(`A maior nota foi de ${maior} com o nome de ${maiorNome}`)
+    alert(`A menor nota foi de ${menor} com o nome de ${menorNome}`)
+}
+
+
+
 
 
 
