@@ -171,6 +171,27 @@ function exe3() {
         console.log(`Produto ${codigos[i]} tem ${estoque[i]} unidades em estoque`)
     }
 }
+/*Faça um programa que preencha um vetor com quinze elementos inteiros e
+ verifique a existência de elementos iguais a 30, mostrando as posições em que apareceram.*/
+ function exe4() {
+    let vetor = []
+    // Preencha o vetor com quinze elementos inteiros
+    for (let i = 0; i < 15; i++) {
+        vetor.push(Number(prompt(`Informe ${i+1}º número inteiro`)))
+        }
+    // Verifique a existência de elementos iguais a 30 e mostre as posições
+    let posicoes30 = []
+    for (let i = 0; i < vetor.length; i++) {
+        if (vetor[i] === 30) {
+            posicoes30.push(i)
+        }
+    }
+    if (posicoes30.length > 0) {
+        alert(`Elemento 30 encontrado nas posições: ${posicoes30}`)
+    } else {
+        alert('Elemento 30 não encontrado no vetor')
+    }
+}
 function exe6() {
     let vendas = []
     let percentuais = []
