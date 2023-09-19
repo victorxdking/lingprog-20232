@@ -82,10 +82,12 @@ function exe1() {
     let numerosImpares = []
     let par = 0
     let impar = 0
+
     // entrada de dados
-    for(let i=0;i<3;i++){
+    for(let i=0;i<6;i++){
         numeros.push(Number(prompt(`Informe o ${i+1}º número inteiro`)))
     }
+
     // encontre os números pares e impares
     for(let i=0;i<numeros.length;i++){
         if(numeros[i] % 2 === 0){
@@ -97,14 +99,40 @@ function exe1() {
             impar++
         }
     }
+
     // imprime os resultados
-    alert(`Números pares ${numerosPares} a quantidade de números pares ${par}`)
-    alert(`Números impares ${numerosImpares} a quantidade de números pares ${impar}`)
+    alert(`Par = ${numerosPares} total de ${par} números\n
+    Impar = ${numerosImpares} total de ${impar} números`)
 }
 function exe2() {
-    
-}
+    let numeros = []
+    let numerosMult2 = []
+    let numerosMult3 = []
+    let numerosMult2e3 = []
 
+    // entrada de dados
+    for(let i=0;i<7;i++){
+        numeros.push(Number(prompt(`Informe o ${i+1}º número inteiro`)))
+    }
+
+    // encontre os números múltiplos de 2
+    for(let i=0;i<7;i++){
+        if(numeros[i] % 2 === 0 && numeros[i] % 3 === 0){
+            numerosMult2e3.push(numeros[i])
+        }
+        else if(numeros[i] % 2 === 0){
+            numerosMult2.push(numeros[i])
+        }
+        else if(numeros[i] % 3 === 0){
+            numerosMult3.push(numeros[i])
+        }
+    }
+
+    // imprime os resultados
+    alert(`  Múltiplos de 2 = ${numerosMult2}\n
+    Múltiplos de 3 = ${numerosMult3}\n
+    Múltiplos de 2 e 3 = ${numerosMult2e3}`)
+}
 function exe3() {
     let codigos = []
     let estoque = []
