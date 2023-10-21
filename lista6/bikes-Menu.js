@@ -91,3 +91,6 @@ function principal(){
     }
     while (opcao != 7)
 }
+
+// Chamando a função principal para iniciar o programa
+principal();
