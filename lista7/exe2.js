@@ -15,7 +15,27 @@ function calcula1220(matriz){
     }
 }
 
-function media(matriz){
-    let aux
-    for(let i=0; i<2; i++)
+// Exe 2
+function mediaPares(matriz){
+    for(let i=0; i<2; i++){
+        for(let i=0; i<2; i++){
+            if(matriz[i][j] % 2 == 0){
+                soma += matriz[i][j]
+                qtde++
+            }
+        }
+    }
+    if (qtde !=0) {
+        console.log(`Média dos números pares ${soma/qtde}`)  
+    }
+    else {
+        console.log(`Não existem valores pares`)
+    }
+}
+
+
+function principal(){
+    let matriz = []
+    calcula1220(matriz)
+    mediaPares(matriz)
 }
