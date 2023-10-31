@@ -1,9 +1,13 @@
+/* 3. Elabore um programa que preencha uma matriz 6 × 3, calcule e mostre: 
+
+- o maior elemento da matriz e sua respectiva posição, ou seja, linha e coluna; 
+- o menor elemento da matriz e sua respectiva posição, ou seja, linha e coluna. */
+
 function lerMatriz(matriz){
     for(let i=0; i<6; i++){
         matriz[i] = []
         for(let j=0; j<3; j++){
-            matriz[i][j] = parseInt(Math.round(Math.randoom()))
-            console.log(matriz)
+            matriz[i][j] = parseInt((Math.random()*10))
         }
     }
 }
@@ -45,5 +49,6 @@ function principal(){
     lerMatriz(matriz)
     calculaMaior(matriz)
     calculaMenor(matriz)
-
+    console.log(matriz)
 }
+principal()
