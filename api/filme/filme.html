@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="filme.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form id="container">
+        <div>
+            <label for="cep">Title</label>
+            <input type="text" id="title">
+        </div>
+        <div>
+            <label for="logradouro">Logradouro</label>
+            <input type="text" id="logradouro">
+        </div>
+        <div>
+            <label for="bairro">Bairro</label>
+            <input type="text" id="bairro">
+        </div>
+        <div>
+            <label for="localidade">Localidade</label>
+            <input type="text" id="localidade">
+        </div>
+        <div>
+            <label for="uf">UF</label>
+            <input type="text" id="uf">
+        </div>
+        <div id="areaBotao">
+            <button type="button" onclick="api()">
+                Consulta CEP
+            </button>
+        </div>
+    </form>
+    </body>
+</html>
