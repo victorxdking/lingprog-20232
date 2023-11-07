@@ -4,9 +4,12 @@ async function api() {
     let title = document.getElementById('title').value;
     // vamos chamar a API usando a função fetch do JS
     // await é síncrono, pois teremos que aguardar a resposta para continuar
-    let resposta = await fetch(`http://www.omdbapi.com/?t=${title}&apikey=1f0653ad`);
+    let dados = await fetch(`http://www.omdbapi.com/?t=${title}&apikey=1f0653ad`)
+                .then(response => {
+                    return response.json()
+                });
     // os dados chegaram no formato string, vamos converter em JSON
-    let dados = await resposta.json();
+    // let dados = await resposta.json();
 
     // coloca os dados no formulário
     document.getElementById('title').value = dados.Title;
