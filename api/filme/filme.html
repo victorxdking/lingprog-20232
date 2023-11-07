@@ -3,37 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Consulta Filme</title>
     <script src="filme.js"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="filme.css">
 </head>
 <body>
     <form id="container">
-        <div>
-            <label for="cep">Title</label>
-            <input type="text" id="title">
+        <div id="left-container">
+            <div>
+                <label for="title">Título</label>
+                <input type="text" id="title">
+            </div>
+            <div>
+                <label for="year">Ano</label>
+                <input type="text" id="year">
+            </div>
+            <div>
+                <label for="genre">Gênero</label>
+                <input type="text" id="genre">
+            </div>
+            <div>
+                <label for="director">Diretor</label>
+                <input type="text" id="director">
+            </div>
+            <div>
+                <label for="actors">Atores</label>
+                <input type="text" id="actors">
+            </div>
+            <div>
+                <label for="plot">Enredo</label>
+                <textarea id="plot"></textarea>
+            </div>
+            <div>
+                <label for="imdbRating">Avaliação IMDb</label>
+                <input type="text" id="imdbRating">
+            </div>
+            <div id="areaBotao">
+                <button type="button" onclick="api()">
+                    Consultar Filme
+                </button>
+            </div>
         </div>
-        <div>
-            <label for="logradouro">Logradouro</label>
-            <input type="text" id="logradouro">
-        </div>
-        <div>
-            <label for="bairro">Bairro</label>
-            <input type="text" id="bairro">
-        </div>
-        <div>
-            <label for="localidade">Localidade</label>
-            <input type="text" id="localidade">
-        </div>
-        <div>
-            <label for="uf">UF</label>
-            <input type="text" id="uf">
-        </div>
-        <div id="areaBotao">
-            <button type="button" onclick="api()">
-                Consulta CEP
-            </button>
+        <div id="right-container">
+            <div>
+                <label for="poster">Poster</label>
+                <img id="poster" alt="Poster">
+            </div>
+            
         </div>
     </form>
-    </body>
+</body>
 </html>
